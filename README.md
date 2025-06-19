@@ -15,12 +15,15 @@ This project is an AI-powered web application that generates personalized learni
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/swkini/ai-personalized-learning-plan-generator.git
+
 cd ai-personalized-learning-plan-generator
 
 ### 2️⃣ Setup Frontend (React)
 
 cd frontend
+
 npm install
+
 npm start
 
 
@@ -39,6 +42,7 @@ git checkout -b feature-branch-name
 3. **Make changes → Stage → Commit:**
 
 git add .
+
 git commit -m "Meaningful commit message"
 
 4. **Push branch:**
