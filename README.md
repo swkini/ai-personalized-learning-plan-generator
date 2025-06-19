@@ -7,7 +7,7 @@ This project is an AI-powered web application that generates personalized learni
 - Frontend: React 
 - Backend: Flask 
 - Database: MySQL 
-- AI Model: Phi 3 
+- AI Model: LLM 
 
 
 ## Setup Instructions 
