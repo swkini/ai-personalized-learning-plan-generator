@@ -7,9 +7,31 @@ function Home() {
   const [hours, setHours] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate('/dashboard', { state: { role, field, hours } });
+
+    const requestData = {
+      role,
+      field,
+      hours
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/plan/generate-plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestData),
+      });
+
+      const data = await response.json();
+      console.log("Plan received:", data);
+
+      // Pass data to dashboard
+      navigate('/dashboard', { state: { role, field, hours, plan: data.plan } });
+
+    } catch (error) {
+      console.error('Error generating plan:', error);
+    }
   };
 
   return (
